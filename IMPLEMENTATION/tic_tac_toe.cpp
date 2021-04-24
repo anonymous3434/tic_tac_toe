@@ -1,6 +1,6 @@
 /**
- * @file project.c Asish Sankhyan
- * @brief 
+ * @file tic_tac_toe.c Asish Sankhyan
+ * @brief A tow player board game implemented in c called tic tac toe 
  * @version 0.1
  * @date 2021-04-24
  * 
@@ -11,11 +11,13 @@
 #include <conio.h>
 #include <windows.h>
 #include <stdlib.h>
-#include <MMsystem.h>
 
 char square[10] = {'o', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 int checkWin();
-void drawBoard();
+/**
+ * @brief A continuos function to draw a board on the screen continously is a void function and returns nothing 
+ * 
+ */
 void draw()
 {
     system("cls");
@@ -31,6 +33,11 @@ void draw()
     printf("  %c  |  %c  |  %c  \n", square[7], square[8], square[9]);
     printf("     |     |     \n");
 }
+/**
+ * @brief The main function
+ * 
+ * @return int 
+ */
 int main()
 {
     system("color 4a");
@@ -77,6 +84,7 @@ int main()
     if (i == 1)
     {
         printf("==>Player %d won", --player);
+        // PlaySound(TEXT("C:\\Users\\dell\\Music\\win.wav"), NULL, SND_SYNC);
     }
     else
     {
@@ -85,6 +93,11 @@ int main()
     getch();
     return 0;
 }
+/**
+ * @brief checks whether eihter of the player won the game and returns respectively
+ * 
+ * @return int an binary value to check if a player wins
+ */
 int checkWin()
 {
     if (square[1] == square[2] && square[2] == square[3])
